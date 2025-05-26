@@ -99,14 +99,14 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
     local LocalTime = CommitUtc + Offset
 
     local T = os.date("*t", LocalTime)
-    local AmPm = T.hour >= 12 and "PM" or "AM"
+    local AmPm = T.hour >= 12 and " PM" or " AM"
     local Hour12 = T.hour % 12
     
     if Hour12 == 0 then
         Hour12 = 12
     end
 
-    local TimeDate = string.format("%d:%02d%s %s %d, %d",
+    local TimeDate = string.format("%d:%02d%s / %s %d, %d",
         Hour12, T.min, AmPm, os.date("%B", LocalTime), T.day, T.year
     )
 
