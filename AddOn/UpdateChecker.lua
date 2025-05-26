@@ -1,7 +1,7 @@
 local HttpService = cloneref(game:GetService("HttpService"))
 
 local UpdateChecker = {}
-local CacheFileName = "Cooked/UpdateCheckerCache.json"
+local CacheFileName = "Cooked/update/CheckerCache.json"
 
 local function ReadCache()
     if isfile and isfile(CacheFileName) then
@@ -98,20 +98,6 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
     local Offset = os.difftime(LocalNow, UtcNow)
     local LocalTime = CommitUtc + Offset
 
-    local SecondsAgo = os.difftime(os.time(), LocalTime)
-
-    local AgoText = ""
-
-    if SecondsAgo < 60 then
-        AgoText = SecondsAgo .. " Seconds Ago"
-    elseif SecondsAgo < 3600 then
-        AgoText = math.floor(SecondsAgo / 60) .. " Minutes Ago"
-    elseif SecondsAgo < 86400 then
-        AgoText = math.floor(SecondsAgo / 3600) .. " Hours Ago"
-    else
-        AgoText = math.floor(SecondsAgo / 86400) .. " Days Ago"
-    end
-
     local T = os.date("*t", LocalTime)
     local AmPm = T.hour >= 12 and "PM" or "AM"
     local Hour12 = T.hour % 12
@@ -124,7 +110,7 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
         Hour12, T.min, AmPm, os.date("%B", LocalTime), T.day, T.year
     )
 
-    UpdateLabel:SetText(AgoText .. "\n" .. TimeDate)
+    UpdateLabel:SetText(TimeDate)
 end
 
 return UpdateChecker
