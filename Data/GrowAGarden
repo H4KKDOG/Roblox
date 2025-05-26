@@ -1,5 +1,5 @@
 return {
-    MutationTable = {
+    AllMutations = {
         "Bloodlit",
         "Burnt",
         "Celestial",
@@ -14,8 +14,7 @@ return {
         "Wet",
         "Zombified"
     },
-
-    FruitSeedTable = {
+    AllFruits = {
         "Apple",
         "Avocado",
         "Bamboo",
@@ -72,8 +71,15 @@ return {
         "Venus Fly Trap",
         "Watermelon"
     },
-
-    GearStockTable = {
+    AllEggs = {
+        "Bug Egg",
+        "Common Egg",
+        "Legendary Egg",
+        "Mythical Egg",
+        "Rare Egg",
+        "Uncommon Egg"
+    },
+    GearStock = {
         "Advanced Sprinkler",
         "Basic Sprinkler",
         "Favorite Tool",
@@ -85,8 +91,7 @@ return {
         "Trowel",
         "Watering Can"
     },
-
-    NightStockTable = {
+    NightStock = {
         "Celestiberry",
         "Moon Cat",
         "Moon Mango",
@@ -95,17 +100,7 @@ return {
         "Star Caller",
         "Twilight Crate"
     },
-
-    EggStockTable = {
-        "Bug Egg",
-        "Common Egg",
-        "Legendary Egg",
-        "Mythical Egg",
-        "Rare Egg",
-        "Uncommon Egg"
-    },
-
-    StockTable = {
+    FruitStock = {
         "Apple",
         "Bamboo",
         "Beanstalk",
@@ -127,8 +122,7 @@ return {
         "Tomato",
         "Watermelon"
     },
-
-    EventStockTable = {
+    EventStock = {
         "Blood Banana",
         "Blood Hedgehog",
         "Blood Kiwi",
