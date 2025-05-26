@@ -74,8 +74,13 @@ return {
     AllEgg = {
         "Bug Egg",
         "Common Egg",
+        "Divine Egg",
+        "Epic Egg",
+        "Exotic Bug Egg",
         "Legendary Egg",
         "Mythical Egg",
+        "Night Egg",
+        "Premium Night Egg",
         "Rare Egg",
         "Uncommon Egg"
     },
