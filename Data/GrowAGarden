@@ -1,5 +1,5 @@
 return {
-    AllMutations = {
+    AllMutation = {
         "Bloodlit",
         "Burnt",
         "Celestial",
@@ -14,7 +14,7 @@ return {
         "Wet",
         "Zombified"
     },
-    AllFruits = {
+    AllFruitSeed = {
         "Apple",
         "Avocado",
         "Bamboo",
@@ -71,13 +71,35 @@ return {
         "Venus Fly Trap",
         "Watermelon"
     },
-    AllEggs = {
+    AllEgg = {
         "Bug Egg",
         "Common Egg",
         "Legendary Egg",
         "Mythical Egg",
         "Rare Egg",
         "Uncommon Egg"
+    },
+    SeedStock = {
+        "Apple",
+        "Bamboo",
+        "Beanstalk",
+        "Blueberry",
+        "Cacao",
+        "Cactus",
+        "Carrot",
+        "Coconut",
+        "Corn",
+        "Daffodil",
+        "Dragon Fruit",
+        "Grape",
+        "Mango",
+        "Mushroom",
+        "Orange Tulip",
+        "Pepper",
+        "Pumpkin",
+        "Strawberry",
+        "Tomato",
+        "Watermelon"
     },
     GearStock = {
         "Advanced Sprinkler",
