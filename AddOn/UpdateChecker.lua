@@ -28,10 +28,6 @@ local function MakeKey(Repo, Path)
 end
 
 function UpdateChecker.Check(Repo, Path, UpdateLabel)
-    if typeof(UpdateLabel) ~= "Instance" or not UpdateLabel:IsA("TextLabel") then
-        return
-    end
-
     local Cache = ReadCache()
     local Key = MakeKey(Repo, Path)
     local Entry = Cache[Key]
@@ -58,7 +54,7 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
         end)
         
         if not Success or not Response then
-            UpdateLabel.Text = "GitHub Request Failed."
+            UpdateLabel:SetText("GitHub Request Failed.")
             return
         end
         
@@ -67,7 +63,7 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
         end)
         
         if not ParseSuccess or type(Data) ~= "table" or #Data == 0 then
-            UpdateLabel.Text = "Failed to Read Commit Info."
+            UpdateLabel:SetText("Failed to Read Commit Info.")
             return
         end
         
@@ -84,7 +80,7 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
     local Year, Month, Day, Hour, Min, Sec = IsoDate:match("(%d+)%-(%d+)%-(%d+)T(%d+):(%d+):(%d+)")
     
     if not (Year and Month and Day and Hour and Min and Sec) then
-        UpdateLabel.Text = "Invalid Commit Date Format."
+        UpdateLabel:SetText("Invalid Commit Date Format.")
         return
     end
 
@@ -128,7 +124,7 @@ function UpdateChecker.Check(Repo, Path, UpdateLabel)
         Hour12, T.min, AmPm, os.date("%B", LocalTime), T.day, T.year
     )
 
-    UpdateLabel.Text = AgoText .. "\n" .. TimeDate
+    UpdateLabel:SetText(AgoText .. "\n" .. TimeDate)
 end
 
 return UpdateChecker
